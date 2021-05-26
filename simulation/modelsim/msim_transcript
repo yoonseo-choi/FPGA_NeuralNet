@@ -75,3 +75,7 @@
 # Expected: 0, Got: 0
 # Check 1 && 1: 
 # Expected: 1, Got: 1
+# Break key hit
+# Break in NamedBeginStat CLOCK_GENERATION at C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/testbench.sv line 24
+# End time: 00:40:17 on May 26,2021, Elapsed time: 0:01:54
+# Errors: 0, Warnings: 0
