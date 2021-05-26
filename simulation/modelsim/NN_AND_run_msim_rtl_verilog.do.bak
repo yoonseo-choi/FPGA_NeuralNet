@@ -1,0 +1,11 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -sv -work work +incdir+C:/Users/yoons/Desktop/FPGA_NeuralNet/modules {C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/sigmoid.sv}
+vlog -sv -work work +incdir+C:/Users/yoons/Desktop/FPGA_NeuralNet/modules {C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/neuron.sv}
+vlog -sv -work work +incdir+C:/Users/yoons/Desktop/FPGA_NeuralNet/modules {C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv}
+

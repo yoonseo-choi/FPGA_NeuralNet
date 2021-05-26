@@ -1,7 +1,7 @@
 module neuron (
     input x0, x1,
-    input [7:0] w0, w1,
-    output logic [15:0] y0
+    input signed [7:0] w0, w1,
+    output logic signed [15:0] y0
 );
 
 

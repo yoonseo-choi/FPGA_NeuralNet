@@ -16,7 +16,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
-// DATE "05/25/2021 19:50:46"
+// DATE "05/25/2021 20:10:46"
 
 // 
 // Device: Altera 10M08DAF484C8G Package FBGA484
@@ -35,12 +35,12 @@ module NN_AND (
 	w1,
 	bias,
 	out);
-input 	reg x0 ;
-input 	reg x1 ;
-input 	logic [7:0] w0 ;
-input 	logic [7:0] w1 ;
-input 	logic [7:0] bias ;
-output 	logic out ;
+input 	x0;
+input 	x1;
+input 	[7:0] w0;
+input 	[7:0] w1;
+input 	[7:0] bias;
+output 	out;
 
 // Design Ports Information
 // out	=>  Location: PIN_C9,	 I/O Standard: 2.5 V,	 Current Strength: Default

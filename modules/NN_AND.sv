@@ -4,8 +4,8 @@
 
 module NN_AND (
     input x0, x1,
-    input [7:0] w0, w1,     // +20, +20
-    input [7:0] bias,       // -30
+    input signed [7:0] w0, w1,     // +20, +20
+    input signed [7:0] bias,       // -30
     output logic out
 );  
 
@@ -19,7 +19,7 @@ module NN_AND (
     // ============================ //
 
 
-    logic [15:0] y0, h0;
+    logic signed [15:0] y0, h0;
 
     neuron n0 (.*);
 

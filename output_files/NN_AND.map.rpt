@@ -1,5 +1,5 @@
 Analysis & Synthesis report for NN_AND
-Tue May 25 19:50:28 2021
+Wed May 26 00:38:10 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -42,13 +42,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 25 19:50:28 2021       ;
+; Analysis & Synthesis Status        ; Successful - Wed May 26 00:38:10 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; NN_AND                                      ;
 ; Top-level Entity Name              ; NN_AND                                      ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
+; Total logic elements               ; 36                                          ;
+;     Total combinational functions  ; 36                                          ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 27                                          ;
@@ -174,35 +174,36 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary              ;
-+---------------------------------------------+------------+
-; Resource                                    ; Usage      ;
-+---------------------------------------------+------------+
-;                                             ;            ;
-; Total combinational functions               ; 0          ;
-; Logic element usage by number of LUT inputs ;            ;
-;     -- 4 input functions                    ; 0          ;
-;     -- 3 input functions                    ; 0          ;
-;     -- <=2 input functions                  ; 0          ;
-;                                             ;            ;
-; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 0          ;
-;     -- arithmetic mode                      ; 0          ;
-;                                             ;            ;
-; Total registers                             ; 0          ;
-;     -- Dedicated logic registers            ; 0          ;
-;     -- I/O registers                        ; 0          ;
-;                                             ;            ;
-; I/O pins                                    ; 27         ;
-;                                             ;            ;
-; Embedded Multiplier 9-bit elements          ; 0          ;
-;                                             ;            ;
-; Maximum fan-out node                        ; out~output ;
-; Maximum fan-out                             ; 1          ;
-; Total fan-out                               ; 27         ;
-; Average fan-out                             ; 0.50       ;
-+---------------------------------------------+------------+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 36       ;
+;                                             ;          ;
+; Total combinational functions               ; 36       ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 0        ;
+;     -- 3 input functions                    ; 17       ;
+;     -- <=2 input functions                  ; 19       ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 18       ;
+;     -- arithmetic mode                      ; 18       ;
+;                                             ;          ;
+; Total registers                             ; 0        ;
+;     -- Dedicated logic registers            ; 0        ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 27       ;
+;                                             ;          ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+;                                             ;          ;
+; Maximum fan-out node                        ; x0~input ;
+; Maximum fan-out                             ; 8        ;
+; Total fan-out                               ; 114      ;
+; Average fan-out                             ; 1.27     ;
++---------------------------------------------+----------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -210,7 +211,8 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |NN_AND                    ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 27   ; 0            ; 0          ; |NN_AND             ; NN_AND      ; work         ;
+; |NN_AND                    ; 36 (11)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 27   ; 0            ; 0          ; |NN_AND             ; NN_AND      ; work         ;
+;    |neuron:n0|             ; 25 (25)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |NN_AND|neuron:n0   ; neuron      ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -236,12 +238,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 27                          ;
-; cycloneiii_lcell_comb ; 1                           ;
-;     normal            ; 1                           ;
+; cycloneiii_lcell_comb ; 37                          ;
+;     arith             ; 18                          ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 17                          ;
+;     normal            ; 19                          ;
 ;         0 data inputs ; 1                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 16                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 4.58                        ;
 +-----------------------+-----------------------------+
 
 
@@ -260,10 +267,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue May 25 19:50:18 2021
+    Info: Processing started: Wed May 26 00:38:00 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FPGA_NN -c NN_AND
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file modules/testbench.sv
+    Info (12023): Found entity 1: testbench File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/testbench.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file modules/sigmoid.sv
     Info (12023): Found entity 1: sigmoid File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/sigmoid.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file modules/nn_and.sv
@@ -273,44 +282,17 @@ Info (12021): Found 1 design units, including 1 entities, in source file modules
 Info (12127): Elaborating entity "NN_AND" for the top level hierarchy
 Info (12128): Elaborating entity "neuron" for hierarchy "neuron:n0" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 24
 Info (12128): Elaborating entity "sigmoid" for hierarchy "sigmoid:s0" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 32
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "out" is stuck at VCC File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 10
+Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 26 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "x1" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 6
-    Warning (15610): No output dependent on input pin "w1[7]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 7
-    Warning (15610): No output dependent on input pin "w1[6]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 7
-    Warning (15610): No output dependent on input pin "w1[5]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 7
-    Warning (15610): No output dependent on input pin "w1[4]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 7
-    Warning (15610): No output dependent on input pin "w1[3]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 7
-    Warning (15610): No output dependent on input pin "w1[2]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 7
-    Warning (15610): No output dependent on input pin "w1[1]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 7
-    Warning (15610): No output dependent on input pin "w1[0]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 7
-    Warning (15610): No output dependent on input pin "x0" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 6
-    Warning (15610): No output dependent on input pin "w0[7]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 7
-    Warning (15610): No output dependent on input pin "w0[6]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 7
-    Warning (15610): No output dependent on input pin "w0[5]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 7
-    Warning (15610): No output dependent on input pin "w0[4]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 7
-    Warning (15610): No output dependent on input pin "w0[3]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 7
-    Warning (15610): No output dependent on input pin "w0[2]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 7
-    Warning (15610): No output dependent on input pin "w0[1]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 7
-    Warning (15610): No output dependent on input pin "w0[0]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 7
-    Warning (15610): No output dependent on input pin "bias[0]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 8
-    Warning (15610): No output dependent on input pin "bias[1]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 8
-    Warning (15610): No output dependent on input pin "bias[2]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 8
-    Warning (15610): No output dependent on input pin "bias[3]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 8
-    Warning (15610): No output dependent on input pin "bias[4]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 8
-    Warning (15610): No output dependent on input pin "bias[5]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 8
-    Warning (15610): No output dependent on input pin "bias[6]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 8
-    Warning (15610): No output dependent on input pin "bias[7]" File: C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv Line: 8
-Info (21057): Implemented 27 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 63 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 26 input pins
     Info (21059): Implemented 1 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 30 warnings
-    Info: Peak virtual memory: 4751 megabytes
-    Info: Processing ended: Tue May 25 19:50:28 2021
+    Info (21061): Implemented 36 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4771 megabytes
+    Info: Processing ended: Wed May 26 00:38:10 2021
     Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:20
+    Info: Total CPU time (on all processors): 00:00:21
 
 

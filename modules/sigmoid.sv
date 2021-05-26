@@ -1,4 +1,4 @@
-module sigmoid (input [15:0] h0,
+module sigmoid (input signed [15:0] h0,
                 output logic out
 );
 
