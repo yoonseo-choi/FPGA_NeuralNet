@@ -4,8 +4,8 @@
 
 module NN_AND (
     input x0, x1,
-    input signed [7:0] w0, w1,     // +20, +20
-    input signed [7:0] bias,       // -30
+    input signed [15:0] w0, w1,     // +20, +20
+    input signed [15:0] bias,       // -30
     output logic out
 );  
 

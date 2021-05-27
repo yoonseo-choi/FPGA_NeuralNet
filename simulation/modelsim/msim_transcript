@@ -10,54 +10,54 @@
 # Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
+# vlog -sv -work work +incdir+C:/Users/yoons/Desktop/FPGA_NeuralNet/modules {C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/BNN.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 02:59:01 on May 27,2021
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yoons/Desktop/FPGA_NeuralNet/modules" C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/BNN.sv 
+# -- Compiling module BNN
+# 
+# Top level modules:
+# 	BNN
+# End time: 02:59:01 on May 27,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/yoons/Desktop/FPGA_NeuralNet/modules {C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/sigmoid.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:38:22 on May 26,2021
+# Start time: 02:59:01 on May 27,2021
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yoons/Desktop/FPGA_NeuralNet/modules" C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/sigmoid.sv 
 # -- Compiling module sigmoid
 # 
 # Top level modules:
 # 	sigmoid
-# End time: 00:38:22 on May 26,2021, Elapsed time: 0:00:00
+# End time: 02:59:01 on May 27,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/yoons/Desktop/FPGA_NeuralNet/modules {C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/neuron.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:38:22 on May 26,2021
+# Start time: 02:59:01 on May 27,2021
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yoons/Desktop/FPGA_NeuralNet/modules" C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/neuron.sv 
 # -- Compiling module neuron
 # 
 # Top level modules:
 # 	neuron
-# End time: 00:38:22 on May 26,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/yoons/Desktop/FPGA_NeuralNet/modules {C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:38:23 on May 26,2021
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yoons/Desktop/FPGA_NeuralNet/modules" C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/NN_AND.sv 
-# -- Compiling module NN_AND
-# 
-# Top level modules:
-# 	NN_AND
-# End time: 00:38:23 on May 26,2021, Elapsed time: 0:00:00
+# End time: 02:59:01 on May 27,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -sv -work work +incdir+C:/Users/yoons/Desktop/FPGA_NeuralNet/modules {C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/testbench.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:38:23 on May 26,2021
+# Start time: 02:59:01 on May 27,2021
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yoons/Desktop/FPGA_NeuralNet/modules" C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/testbench.sv 
 # -- Compiling module testbench
 # 
 # Top level modules:
 # 	testbench
-# End time: 00:38:23 on May 26,2021, Elapsed time: 0:00:00
+# End time: 02:59:01 on May 27,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  testbench
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 00:38:23 on May 26,2021
+# Start time: 02:59:01 on May 27,2021
 # Loading sv_std.std
 # Loading work.testbench
-# Loading work.NN_AND
+# Loading work.BNN
 # Loading work.neuron
 # Loading work.sigmoid
 # 
@@ -67,8 +67,18 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
+# Bias:    -30,     10,    -10
+# 
+# 
+# Weight:
+#     20
+#     20
+#    -20
+#    -20
+#     20
+#     20
 # Check 0 && 0: 
-# Expected: 0, Got: 0
+# Expected: 1, Got: 1
 # Check 0 && 1: 
 # Expected: 0, Got: 0
 # Check 1 && 0: 
@@ -76,6 +86,6 @@
 # Check 1 && 1: 
 # Expected: 1, Got: 1
 # Break key hit
-# Break in NamedBeginStat CLOCK_GENERATION at C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/testbench.sv line 24
-# End time: 00:40:17 on May 26,2021, Elapsed time: 0:01:54
+# Break in Module testbench at C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/testbench.sv line 23
+# End time: 03:01:06 on May 27,2021, Elapsed time: 0:02:05
 # Errors: 0, Warnings: 0

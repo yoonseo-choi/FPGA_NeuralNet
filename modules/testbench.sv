@@ -4,19 +4,18 @@ timeprecision 1ns;
 
 logic Clk = 0;
 logic x0, x1, out;
-logic signed [7:0] w0, w1, bias;
+logic signed [15:0] wt [5:0];
+logic signed [15:0] b [2:0];
 logic expected;
 
 always_comb begin
 
-    w0 = 20;
-    w1 = 20;
-    bias = -30;
-
+    wt = {20, 20, -20, -20, 20, 20};
+    b = {-10, 10, -30};
+    
 end
 
-NN_AND nn_and0 (.*);
-
+BNN bnn0 (.*);
 
 // Toggle the clock
 // #1 means wait for a delay of 1 timeunit
@@ -37,30 +36,39 @@ initial begin: TEST_VECTORS
 #1 x0 = 0;
 #1 x1 = 0;
 #1 expected = 0;
+// $display ("Bias: %d, %d, %d", b[0], b[1], b[2]);
+// $display ("\n");
+// $display ("Weight:");
+
+
+// for (int i = 0; i < 6; i++) begin
+//     $display ("%d", wt[i]);
+// end
+
 
 // reset and check for 0 & 0
 #3 x0 = 0;
 #3 x1 = 0;
 $display ("Check %d && %d: ", x0, x1);
-#3 expected = 0;
+#3 expected = ~(x0^x1);
 $display ("Expected: %d, Got: %d", expected, out);
 
 #5 x0 = 0;
 #5 x1 = 1;
 $display ("Check %d && %d: ", x0, x1);
-#5 expected = 0;
+#5 expected = ~(x0^x1);
 $display ("Expected: %d, Got: %d", expected, out);
 
 #7 x0 = 1;
 #7 x1 = 0;
 $display ("Check %d && %d: ", x0, x1);
-#7 expected = 0;
+#7 expected = ~(x0^x1);
 $display ("Expected: %d, Got: %d", expected, out);
 
 #9 x0 = 1;
 #9 x1 = 1;
 $display ("Check %d && %d: ", x0, x1);
-#9 expected = 1;
+#9 expected = ~(x0^x1);
 $display ("Expected: %d, Got: %d", expected, out);
 
 end

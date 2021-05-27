@@ -1,6 +1,6 @@
 module neuron (
     input x0, x1,
-    input signed [7:0] w0, w1,
+    input signed [15:0] w0, w1,
     output logic signed [15:0] y0
 );
 
@@ -13,3 +13,5 @@ module neuron (
     end
 
 endmodule
+
+
