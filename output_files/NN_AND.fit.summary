@@ -1,15 +1,15 @@
-Fitter Status : Successful - Tue May 25 20:10:39 2021
+Fitter Status : Successful - Tue Jun 01 02:09:42 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : NN_AND
-Top-level Entity Name : NN_AND
+Top-level Entity Name : mod_sigmoid
 Family : MAX 10
 Device : 10M08DAF484C8G
 Timing Models : Final
-Total logic elements : 1 / 8,064 ( < 1 % )
-    Total combinational functions : 1 / 8,064 ( < 1 % )
+Total logic elements : 1,731 / 8,064 ( 21 % )
+    Total combinational functions : 1,731 / 8,064 ( 21 % )
     Dedicated logic registers : 0 / 8,064 ( 0 % )
 Total registers : 0
-Total pins : 27 / 250 ( 11 % )
+Total pins : 128 / 250 ( 51 % )
 Total virtual pins : 0
 Total memory bits : 0 / 387,072 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 48 ( 0 % )

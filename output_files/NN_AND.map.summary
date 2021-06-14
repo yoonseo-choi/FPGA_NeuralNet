@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Thu May 27 02:58:49 2021
+Analysis & Synthesis Status : Successful - Tue Jun 01 02:39:33 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : NN_AND
-Top-level Entity Name : BNN
+Top-level Entity Name : mod_sigmoid
 Family : MAX 10
-Total logic elements : 192
-    Total combinational functions : 192
+Total logic elements : 1,730
+    Total combinational functions : 1,730
     Dedicated logic registers : 0
 Total registers : 0
-Total pins : 147
+Total pins : 128
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

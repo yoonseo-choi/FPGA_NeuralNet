@@ -8,103 +8,78 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/yoons/Desktop/FPGA_NeuralNet/simulation/modelsim
-vBNN
+vmod_sigmoid
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1622102341
+Z2 !s110 1622533271
 !i10b 1
-!s100 k_<9K4i?HdedccL7>?LfA0
-IFOW?OQ:1WH[?ARa1[0:2C0
+!s100 36Y0^UY=hQgQFePVBo9f?2
+I`G1UOBfAzIf:4cCDRfJgA0
 Z3 VDg1SIo80bB@j0V0VzS_@n1
-!s105 BNN_sv_unit
+!s105 mod_sigmoid_sv_unit
 S1
 R0
-w1622102276
-8C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/BNN.sv
-FC:/Users/yoons/Desktop/FPGA_NeuralNet/modules/BNN.sv
-L0 5
+w1622518670
+8C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/mod_sigmoid.sv
+FC:/Users/yoons/Desktop/FPGA_NeuralNet/modules/mod_sigmoid.sv
+L0 1
 Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1622102341.000000
-!s107 C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/BNN.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/yoons/Desktop/FPGA_NeuralNet/modules|C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/BNN.sv|
+Z5 !s108 1622533271.000000
+!s107 C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/mod_sigmoid.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/yoons/Desktop/FPGA_NeuralNet/modules|C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/mod_sigmoid.sv|
 !i113 1
 Z6 o-sv -work work
 Z7 !s92 -sv -work work +incdir+C:/Users/yoons/Desktop/FPGA_NeuralNet/modules
 Z8 tCvgOpt 0
-n@b@n@n
-vneuron
+vsigmoid_ROM
 R1
 R2
 !i10b 1
-!s100 :cUMf4f1j8N=_Y^K5N3mA0
-IQ4U>dIkPGCDYB]WH74cZn0
+!s100 Y0?j@AGXIJ`mV[W_6=gU40
+IL>5`0;>ANS0G?I?838TA^0
 R3
-!s105 neuron_sv_unit
+!s105 sigmoid_ROM_sv_unit
 S1
 R0
-w1622102250
-8C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/neuron.sv
-FC:/Users/yoons/Desktop/FPGA_NeuralNet/modules/neuron.sv
+w1622533247
+8C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/sigmoid_ROM.sv
+FC:/Users/yoons/Desktop/FPGA_NeuralNet/modules/sigmoid_ROM.sv
 L0 1
 R4
 r1
 !s85 0
 31
 R5
-!s107 C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/neuron.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/yoons/Desktop/FPGA_NeuralNet/modules|C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/neuron.sv|
+!s107 C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/sigmoid_ROM.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/yoons/Desktop/FPGA_NeuralNet/modules|C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/sigmoid_ROM.sv|
 !i113 1
 R6
 R7
 R8
-vsigmoid
+nsigmoid_@r@o@m
+vtestbench_sigmoid
 R1
 R2
 !i10b 1
-!s100 OnTal66X`5[GX<lcnK9h_0
-IecDGEh2_[>:KXPLR4iilB0
+!s100 J0HYoQ`T0HNMagNWf;DK;3
+IB>U88j8YNgD:hTAULgdJC1
 R3
-!s105 sigmoid_sv_unit
+!s105 testbench_sigmoid_sv_unit
 S1
 R0
-w1622007319
-8C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/sigmoid.sv
-FC:/Users/yoons/Desktop/FPGA_NeuralNet/modules/sigmoid.sv
+w1622532590
+8C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/testbench_sigmoid.sv
+FC:/Users/yoons/Desktop/FPGA_NeuralNet/modules/testbench_sigmoid.sv
 L0 1
 R4
 r1
 !s85 0
 31
 R5
-!s107 C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/sigmoid.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/yoons/Desktop/FPGA_NeuralNet/modules|C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/sigmoid.sv|
-!i113 1
-R6
-R7
-R8
-vtestbench
-R1
-R2
-!i10b 1
-!s100 Dn5AN@SZoLhIMfM@>G[zf2
-ISAfdM[71S7Dz8h37=615R0
-R3
-!s105 testbench_sv_unit
-S1
-R0
-w1622102303
-8C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/testbench.sv
-FC:/Users/yoons/Desktop/FPGA_NeuralNet/modules/testbench.sv
-L0 1
-R4
-r1
-!s85 0
-31
-R5
-!s107 C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/testbench.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/yoons/Desktop/FPGA_NeuralNet/modules|C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/testbench.sv|
+!s107 C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/testbench_sigmoid.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/yoons/Desktop/FPGA_NeuralNet/modules|C:/Users/yoons/Desktop/FPGA_NeuralNet/modules/testbench_sigmoid.sv|
 !i113 1
 R6
 R7

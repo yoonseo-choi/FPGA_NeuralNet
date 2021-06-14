@@ -3,9 +3,10 @@
 
 
 module BNN (
+    input Clk,
     input x0, x1,
-    input logic signed [15:0] wt [5:0],
-    input logic signed [15:0] b [2:0],
+    // input logic signed [15:0] wt [0:5],
+    input logic signed [15:0] b [0:2],
     output logic out
 );  
 
@@ -20,25 +21,48 @@ module BNN (
     //      1       1       1       //
     // ============================ //
 
-    logic signed [15:0] y0, y1, y2, z0,z1, z2;
-    logic out0, out1;
-
-    neuron n0 (.x0(x0), .x1(x1), .w0(wt[0]), .w1(wt[1]), .y0(y0));
-    sigmoid s0 (.h0(z0), .out(out0));
     
-    neuron n1 (.x0(x0), .x1(x1), .w0(wt[2]), .w1(wt[3]), .y0(y1));
-    sigmoid s1 (.h0(z1), .out(out1));
+    logic signed y0 [1:0];
 
-    neuron n2 (.x0(out0), .x1(out1), .w0(wt[4]), .w1(wt[5]), .y0(y2));
-    sigmoid s2 (.h0(z2), .out(out));
+    // neuron n0 (.x0(x0), .x1(x1), .w0(wt[0]), .w1(wt[1]), .y0(y[0]));
+    // sigmoid s0 (.h0(z[0]), .out(h[0]));
+    
+    // neuron n1 (.x0(x0), .x1(x1), .w0(wt[2]), .w1(wt[3]), .y0(y[1]));
+    // sigmoid s1 (.h0(z[1]), .out(h[1]));
 
-    always_comb begin
+    // fetch initial weights from ROM
 
-        z0 = y0 + b[0];
-        z1 = y1 + b[1];
-        z2 = y2 + b[2];
+    logic signed [15:0] wt [0:5];
 
-    end
+    generate
+        
+        genvar i;
+
+        for (i = 0; i < 6; i++) begin: fetch_weights
+
+            weights_ROM wt_rom0 (.r_addr(i), .wt_out(wt[i]));
+
+        end
+
+    endgenerate
+
+    // hidden layer
+
+    generate 
+
+        for (i = 0; i < 2; i++) begin: neuron_generation
+
+            neuron n0 (.x0(x0), .x1(x1), .w0(wt[2*i]), .w1(wt[2*i+1]), .b(b[i]), .y(y0[i]));
+
+        end
+
+    endgenerate
+
+    // output layer
+
+    neuron n1 (.x0(y0[0]), .x1(y0[1]), .w0(wt[4]), .w1(wt[5]), .b(b[2]), .y(out));
+
+    
 
 
 endmodule

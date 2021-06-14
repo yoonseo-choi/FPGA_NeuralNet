@@ -6,17 +6,7 @@ module sigmoid (input signed [15:0] h0,
 
     always_comb begin
 
-        if (h0 < 0) begin
-
-            out = 0;
-
-        end
-        
-        else begin
-
-            out = 1;
-
-        end
+        out = (h0 < 0) ? 0:1;
 
     end
 

@@ -4,14 +4,13 @@ timeprecision 1ns;
 
 logic Clk = 0;
 logic x0, x1, out;
-logic signed [15:0] wt [5:0];
-logic signed [15:0] b [2:0];
+logic signed [15:0] b [0:2];
 logic expected;
 
 always_comb begin
 
-    wt = {20, 20, -20, -20, 20, 20};
-    b = {-10, 10, -30};
+    // wt = {20, 20, -20, -20, 20, 20};
+    b = {-30, 10, -10};
     
 end
 

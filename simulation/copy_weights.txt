@@ -1,0 +1,9 @@
+// memory data file (do not edit the following line - required for mem load use)
+// instance=/testbench/bnn0/fetch_weights[5]/wt_rom0/weights_ROM
+// format=hex addressradix=h dataradix=h version=1.0 wordsperline=1 noaddress
+0014
+0014
+ffec
+ffec
+0014
+0014
